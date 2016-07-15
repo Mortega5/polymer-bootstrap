@@ -55,7 +55,11 @@ Custom property | Description | Default
     border-radius: 4px;
     @apply(--bootstrap-dropdown-btn-toggle);
   }
-
+  .dropdown[reverse] .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+  }
   .btn-toggle:hover,
   .btn-toggle:active,
   .btn-toggle:focus {
@@ -91,8 +95,13 @@ Custom property | Description | Default
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     @apply(--bootstrap-dropdown-dropdown-box);
   }
+  .dropdown[reverse] .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+  }
   </style>
-  <div class="dropdown" id="dropdown">
+  <div class="dropdown" id="dropdown" reverse$="{{dropup}}">
     <button id="btn_toggle" class="btn-toggle" type="button" on-blur="blur" on-click="toggle"  on-tab="toggle" aria-haspopup="true" aria-expanded="true">
       {{btn_title}}
       <span class="caret"></span>
@@ -116,9 +125,15 @@ Polymer({
       reflectToAttribute:true,
       value:'Dropdown'
     },
+    dropup: {
+      type:'boolean',
+      value:false,
+      reflectToAttribute:true
+    },
     opened: {
       type:'boolean',
-      value: false
+      value: false,
+      reflectToAttribute:true
     }
   },
   toggle: function(){

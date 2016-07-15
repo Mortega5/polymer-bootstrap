@@ -29,27 +29,6 @@ bootstrap-dropdown#second {
 
 
 }
-.menu-content{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  float: left;
-  min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
-  font-size: 14px;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
 .menu-content > li >a {
   display: block;
   padding: 3px 20px;
@@ -71,11 +50,18 @@ li:hover{
     <li><a href="#action2">Another action</a></li>
     <li><a href="#action3">Something else here</a></li>
     <hr>
-    <li><a href="#action4">Separated link</a></li>
   </ul>
 </bootstrap-dropdown>
 
 <bootstrap-dropdown id="second" btn_title="Custom Style">
+  <div class="menu-content">
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+  </div>
+</bootstrap-dropdown>
+
+<bootstrap-dropdown id="3" btn_title="dropup" dropup>
   <div class="menu-content">
     <p>Test</p>
     <p>Test</p>
