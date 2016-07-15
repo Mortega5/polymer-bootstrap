@@ -29,7 +29,7 @@ bootstrap-dropdown#second {
 
 
 }
-.menu-content > li >a {
+.menu-content > div >a {
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -38,34 +38,50 @@ bootstrap-dropdown#second {
   color: #333;
   white-space: nowrap;
   text-decoration: none;
+  list-style: none;
 }
 li:hover{
   background-color:#eee;
+  text-decoration: none;
+  list-style: none;
 }
-
+#third{
+  position: absolute;
+  top: 200px;
+  left: 10px;
+}
 </style>
 <bootstrap-dropdown id="first">
-  <ul class="menu-content" aria-labelledby="dropdownMenu1">
-    <li><a href="#action">Action</a></li>
-    <li><a href="#action2">Another action</a></li>
-    <li><a href="#action3">Something else here</a></li>
+  <div class="menu-content">
+    <div><a href="#action">Action</a></div>
+    <div><a href="#action2">Another action</a></div>
     <hr>
-  </ul>
+    <div><a href="#action3">Something else here</a></div>
+
+  </div>
 </bootstrap-dropdown>
 
 <bootstrap-dropdown id="second" btn_title="Custom Style">
   <div class="menu-content">
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
+    <p>Example</p>
+    <p>Example</p>
+    <p>Example</p>
   </div>
 </bootstrap-dropdown>
 
-<bootstrap-dropdown id="3" btn_title="dropup" dropup>
+<bootstrap-dropdown id="third" btn_title="dropup" dropup>
   <div class="menu-content">
-    <p>Test</p>
-    <p>Test</p>
-    <p>Test</p>
+    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+  </div>
+</bootstrap-dropdown>
+
+<bootstrap-dropdown id="fourth" btn_title="custom-list">
+  <div class="menu-content">
+    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
+    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
+    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
   </div>
 </bootstrap-dropdown>
 

@@ -101,13 +101,13 @@ Custom property | Description | Default
     margin-bottom: 2px;
   }
   </style>
-  <div class="dropdown" id="dropdown" reverse$="{{dropup}}">
-    <button id="btn_toggle" class="btn-toggle" type="button" on-blur="blur" on-click="toggle"  on-tab="toggle" aria-haspopup="true" aria-expanded="true">
+  <div class="dropdown" id="dropdown" on-focus="test" reverse$="{{dropup}}" on-blur="blur">
+    <button id="btn_toggle" class="btn-toggle" type="button" on-click="toggle"  on-tab="toggle" aria-haspopup="true" aria-expanded="true">
       {{btn_title}}
       <span class="caret"></span>
     </button>
     <template is="dom-if" if="{{opened}}">
-      <div class="dropdown-menu" on-blur="blur">
+      <div class="dropdown-menu">
         <content select=".menu-content"></content>
       </div>
     </template>
@@ -118,7 +118,9 @@ Custom property | Description | Default
 <script>
 Polymer({
   is: 'bootstrap-dropdown',
-
+  hostAttributes:{
+    tabindex:0
+  },
   properties: {
     btn_title: {
       type: 'String',
@@ -136,16 +138,52 @@ Polymer({
       reflectToAttribute:true
     }
   },
+  listeners: {
+    'focusout': 'blur',
+    'click':'test'
+  },
   toggle: function(){
     this.opened = !this.opened;
-    console.log('Estado del menu:' + this.opened);
   },
   blur: function(e){
-    // avoid close before click button
-    setTimeout(function(){
-      this.opened = false;
-    }.bind(this),150)
+    this.opened = false;
+    console.log('blur');
+  },
+  test: function(e){
+    this.opened = true;
+    e.stopPropagation();
+    console.log('hello');
   }
 });
+</script>
+</dom-module>
+
+<dom-module id="bootstrap-dropdown-item">
+  <template>
+  <style>
+  .item {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .item:hover{
+    background-color:#eee;
+    cursor:pointer;
+  }
+  </style>
+  <div class="item">
+    <content></content>
+  </div>
+</template>
+<script>
+Polymer({
+  is:'bootstrap-dropdown-item',
+  properties:{}
+})
 </script>
 </dom-module>
