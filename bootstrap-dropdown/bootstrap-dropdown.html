@@ -1,0 +1,136 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!--
+An element providing the interface for any site of exchanges
+Example:
+```
+<bootstrap-dropdown></bootstrap-dropdown>
+```
+Custom property | Description | Default
+----------------|-------------|----------
+`--bootstrap-dropdown-btn-toggle` | Mixin applied to bootstrap-dropdown button  | `{}`
+`--bootstrap-dropdown-btn-toggle-focused` | Mixin applied to bootstrap-dropdown button when is focused  | `{}`
+`--bootstrap-dropdown-dropdown-box` | Mixin aplied to menu box that contains menu options | `{}`
+-->
+
+<dom-module id="bootstrap-dropdown">
+  <template>
+  <style is="custom-style">
+  :host {
+    display: inline-block;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .btn-toggle{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    @apply(--bootstrap-dropdown-btn-toggle);
+  }
+
+  .btn-toggle:hover,
+  .btn-toggle:active,
+  .btn-toggle:focus {
+    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+    @apply(--bootstrap-dropdown-btn-toggle_focused);
+  }
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 100%;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    @apply(--bootstrap-dropdown-dropdown-box);
+  }
+  </style>
+  <div class="dropdown" id="dropdown">
+    <button id="btn_toggle" class="btn-toggle" type="button" on-blur="blur" on-click="toggle"  on-tab="toggle" aria-haspopup="true" aria-expanded="true">
+      {{btn_title}}
+      <span class="caret"></span>
+    </button>
+    <template is="dom-if" if="{{opened}}">
+      <div class="dropdown-menu" on-blur="blur">
+        <content select=".menu-content"></content>
+      </div>
+    </template>
+  </div>
+
+</template>
+
+<script>
+Polymer({
+  is: 'bootstrap-dropdown',
+
+  properties: {
+    btn_title: {
+      type: 'String',
+      reflectToAttribute:true,
+      value:'Dropdown'
+    },
+    opened: {
+      type:'boolean',
+      value: false
+    }
+  },
+  toggle: function(){
+    this.opened = !this.opened;
+    console.log('Estado del menu:' + this.opened);
+  },
+  blur: function(e){
+    // avoid close before click button
+    setTimeout(function(){
+      this.opened = false;
+    }.bind(this),150)
+  }
+});
+</script>
+</dom-module>

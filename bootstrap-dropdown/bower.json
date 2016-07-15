@@ -1,5 +1,5 @@
 {
-  "name": "polymer-glyphicon",
+  "name": "bootstrap-dropdown",
   "version": "1.0.7",
   "authors": [
     "Miguel Ortega Moreno <miguel.ortega.moreno5@gmail.com>"
@@ -9,11 +9,11 @@
     "web-component",
     "polymer",
     "seed",
-    "glyphicon"
+    "dropdown"
   ],
-  "main": "polymer-glyphicon.html",
+  "main": "bootstrap-dropdown.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/mortega5/seed-element/",
+  "homepage": "https://github.com/mortega5/polymer-bootstrap/",
   "ignore": [
     "/.*",
     "/test/"

@@ -5,7 +5,7 @@ Polymer elements based on bootstrap component. It use css provided by bootstrap.
 ## STATUS ##
 
 * [x] [Glyphicons](http://getbootstrap.com/components/#glyphicons)
-* [ ] [Dropdowns](http://getbootstrap.com/components/#dropdowns)
+* [x] [Dropdowns](http://getbootstrap.com/components/#dropdowns)
 * [ ] [Button groups](http://getbootstrap.com/components/#btn-groups)
 * [ ] [Button dropdowns](http://getbootstrap.com/components/#btn-dropdowns)
 * [ ] [Input groups](http://getbootstrap.com/components/#input-groups)

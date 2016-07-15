@@ -14,20 +14,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 An element providing the interface for any site of exchanges
 Example:
 ```
-<polymer-glyphicon></polymer-glyphicon>
+<bootstrap-glyphicon></bootstrap-glyphicon>
 ```
 Custom property | Description | Default
 ----------------|-------------|----------
-`----polymer-glyphicon-size` | Change glyphicon size | ``
-`----polymer-glyphicon-style` | Mixin applied to polymer-glyphicon  | `{}`
+`----bootstrap-glyphicon-size` | Change glyphicon size | ``
+`----bootstrap-glyphicon-style` | Mixin applied to bootstrap-glyphicon  | `{}`
 -->
 
-<dom-module id="polymer-glyphicon">
+<dom-module id="bootstrap-glyphicon">
   <template>
   <style is="custom-style">
   :host {
     display: inline-block;;
-    font-size: var(--polymer-glyphicon-size);
+    font-size: var(--bootstrap-glyphicon-size);
   }
   @font-face {
     font-family: 'Glyphicons Halflings';
@@ -40,7 +40,7 @@ Custom property | Description | Default
     url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
   }
   .glyphicon {
-    @apply(--polymer-glyphicon-style);
+    @apply(--bootstrap-glyphicon-style);
     position: relative;
     top: 1px;
     display: inline-block;
@@ -845,7 +845,7 @@ Custom property | Description | Default
 
 <script>
 Polymer({
-  is: 'polymer-glyphicon',
+  is: 'bootstrap-glyphicon',
 
   properties: {
     icon: {
