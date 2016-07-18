@@ -1,7 +1,25 @@
 # bootstrap-glyphicon
 
-An element providing a starting point for your own reusable Polymer elements.
+Create a glyphicon using polymer elements. Icon value is the icon name using in bootstrap but removing `glyphicon` and `glyphicon-` style. For example: 
 
+* glyphicon-pencil is pencil
+* glyphicon-star is star
+* ...
+
+
+
+## Properties
+
+| Attribute | Description                       | Type   | Default |
+|-----------|-----------------------------------|--------|---------|
+| __Icon__    | Icon that the component will show | String | ''      |
+
+## Custom Style
+
+| Custom Property               | Description                          | Default |
+|-------------------------------|--------------------------------------|---------|
+| __--bootstrap-glyphicon-size__  | Change glyphicon size                | 12px    |
+| __--bootstrap-glyphicon-style__ | Mixin applied to bootstrap-glyphicon | {}      |
 
 ## Dependencies
 
@@ -13,16 +31,3 @@ install that via:
 Then, go ahead and download the element's dependencies:
 
     bower install
-
-## Properties
-
-    | Attribute | Description                       | Type   | Default |
-    |-----------|-----------------------------------|--------|---------|
-    | `Icon`    | Icon that the component will show | String | ''      |
-
-## Custom Style
-
-    | Custom Property               | Description                          | Default |
-    |-------------------------------|--------------------------------------|---------|
-    | `--bootstrap-glyphicon-size`  | Change glyphicon size                | 12px    |
-    | `--bootstrap-glyphicon-style` | Mixin applied to bootstrap-glyphicon | {}      |
