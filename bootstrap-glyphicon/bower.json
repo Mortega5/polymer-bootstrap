@@ -13,7 +13,7 @@
   ],
   "main": "bootstrap-glyphicon.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/mortega5/polymer-bootstrap/",
+  "homepage": "https://github.com/Mortega5/bootstrap-glyphicon",
   "ignore": [
     "/.*",
     "/test/"
