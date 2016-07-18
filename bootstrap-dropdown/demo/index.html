@@ -45,47 +45,75 @@ li:hover{
   text-decoration: none;
   list-style: none;
 }
-#third{
+#dropup-content{
   position: absolute;
   top: 200px;
   left: 10px;
 }
 </style>
-<bootstrap-dropdown id="first">
-  <div class="menu-content">
-    <div><a href="#action">Action</a></div>
-    <div><a href="#action2">Another action</a></div>
-    <hr>
-    <div><a href="#action3">Something else here</a></div>
+<template is="dom-bind" id="bind">
+  <bootstrap-dropdown id="first">
+    <div class="menu-content">
+      <div><a href="#action">Action</a></div>
+      <div><a href="#action2">Another action</a></div>
+      <hr>
+      <div><a href="#action3">Something else here</a></div>
 
-  </div>
-</bootstrap-dropdown>
+    </div>
+  </bootstrap-dropdown>
 
-<bootstrap-dropdown id="second" btn_title="Custom Style">
-  <div class="menu-content">
-    <p>Example</p>
-    <p>Example</p>
-    <p>Example</p>
-  </div>
-</bootstrap-dropdown>
+  <bootstrap-dropdown id="custom-content" btn_title="Custom Style">
+    <div class="menu-content">
+      <p>Example</p>
+      <p>Example</p>
+      <p>Example</p>
+    </div>
+  </bootstrap-dropdown>
 
-<bootstrap-dropdown id="third" btn_title="dropup" dropup>
-  <div class="menu-content">
-    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
-    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
-    <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
-  </div>
-</bootstrap-dropdown>
+  <bootstrap-dropdown id="dropup-content" btn_title="dropup" dropup>
+    <div class="menu-content">
+      <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+      <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+      <bootstrap-dropdown_item>Example</bootstrap-dropdown_item>
+    </div>
+  </bootstrap-dropdown>
 
-<bootstrap-dropdown id="fourth" btn_title="custom-list">
-  <div class="menu-content">
-    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
-    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
-    <bootstrap-dropdown-item>Example</bootstrap-dropdown-item>
-  </div>
-</bootstrap-dropdown>
+  <bootstrap-dropdown id="list" btn_title="List items" menu_items="{{list}}">
+  </bootstrap-dropdown>
+  <bootstrap-dropdown id="complexList" btn_title="Custom list items" menu_items="{{complexList}}">
+  </bootstrap-dropdown>
 
+</template>
+
+<script>
+  var bind = document.querySelector('#bind');
+  bind.list = ['Menu1', 'Menu2', 'Menu3'];
+  bind.complexList = [
+    {
+      name: 'Load',
+      onclick: function(){
+        console.log('Clicked Load');
+      },
+      link:'#load',
+      icon: 'folder-open'
+    },
+    {
+      name: 'Save',
+      onclick: function(){
+        console.log('Clicked Save');
+      },
+      link:'#option2',
+      icon: 'floppy-saved'
+    },
+    {
+      name: 'Edit',
+      onclick: function(){
+        console.log('Clicked Edit');
+      },
+      link:'#edit',
+      icon: 'pencil'
+    }
+  ]
 </script>
-
 </body>
 </html>
