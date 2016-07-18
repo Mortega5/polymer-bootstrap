@@ -16,7 +16,7 @@ Create a glyphicon using polymer elements. Icon value is the icon name using in 
 
 | Attribute | Description                       | Type   | Default |
 |-----------|-----------------------------------|--------|---------|
-| __Icon__    | Icon that the component will show | String | ''      |
+| __icon__    | Icon that the component will show | String | ''      |
 
 ## Custom Style
 
