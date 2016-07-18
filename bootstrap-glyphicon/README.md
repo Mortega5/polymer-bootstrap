@@ -6,7 +6,11 @@ Create a glyphicon using polymer elements. Icon value is the icon name using in 
 * glyphicon-star is star
 * ...
 
+## Example
 
+```html
+<bootstrap-glyphicon icon="pencil"></bootstrap-glyphicon>
+```
 
 ## Properties
 
