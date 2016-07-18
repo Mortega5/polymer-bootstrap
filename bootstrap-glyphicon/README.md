@@ -16,14 +16,14 @@ Create a glyphicon using polymer elements. Icon value is the icon name using in 
 
 | Attribute | Description                       | Type   | Default |
 |-----------|-----------------------------------|--------|---------|
-| __icon__    | Icon that the component will show | String | ''      |
+| __icon__    | Icon that the component will show | String | ' '      |
 
 ## Custom Style
 
 | Custom Property               | Description                          | Default |
 |-------------------------------|--------------------------------------|---------|
 | __--bootstrap-glyphicon-size__  | Change glyphicon size                | 12px    |
-| __--bootstrap-glyphicon-style__ | Mixin applied to bootstrap-glyphicon | {}      |
+| __--bootstrap-glyphicon-style__ | Mixin applied to bootstrap-glyphicon | { }      |
 
 ## Dependencies
 
