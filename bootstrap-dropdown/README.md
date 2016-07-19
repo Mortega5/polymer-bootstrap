@@ -49,18 +49,17 @@ Create a dropdown using a polymer element. It's based on boostrap dropdown.
       icon: 'pencil'
     }
   ]
-</script
+</script>
 ```
 NOTE: menu_items can be a single array with the names of the options fields.
-```json
+```javascript
   var option_list = ['Link1','Link2','Link3']
 ```
   or it can be an object with some camps:
 
-  * Name: name of the field
-  * onclick: function which will be invoke when the field is Clicked
-  * icon: type of icon
-
+    - Name: name of the field
+    - onclick: function which will be invoke when the field is Clicked
+    - icon: type of icon
 
 * Using bootstrap-dropdown-item (included in bootstrap-dropdown)
 
