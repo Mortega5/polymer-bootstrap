@@ -72,7 +72,7 @@ Custom property | Description | Default
     color: #fff;
     background-color: #204d74;
     border-color: #122b40;
-    @apply(--bootstrap-dropdown-btn-toggle_focused);
+    @apply(--bootstrap-dropdown-btn-toggle-focused);
   }
   .caret {
     display: inline-block;
@@ -146,7 +146,7 @@ Custom property | Description | Default
         <template is="dom-repeat" items="{{menu_items}}" index-as="item_no">
           <div>
             <a href="{{item.link}}" data-icon$="{{item.icon}}" data-index$="{{item_no}}" on-click="_clickItem">
-              <bootstrap-glyphicon icon="{{item.icon}}"> </bootstrap-glyphicon>
+              <bootstrap-glyphicon icon="{{item.icon}}" style$="{{item.icon_style}}"> </bootstrap-glyphicon>
               {{_getName(item)}}
             </a>
           </div>
@@ -187,13 +187,10 @@ Polymer({
     }
   },
   ready: function(){
-    this.listen(document,'click','close');
+    this.listen(document,'click','_blurClose');
   },
   detached: function(){
-    this.unlisten(document,'click','close');
-  },
-  toggle: function(e){
-    this.opened = !this.opened;
+    this.unlisten(document,'click','_blurClose');
   },
   _isSeparator: function(value,condition){
     value = value.name || value;
@@ -211,7 +208,7 @@ Polymer({
       this.menu_items[index].onclick(e);
     }
   },
-  close: function(e){
+  _blurClose: function(e){
     if (e){
       var target = e.target;
       var found = false;
@@ -225,7 +222,17 @@ Polymer({
     if (!found){
       this.opened = false;
     }
+  },
+  close: function(){
+    this.opened = false;
+  },
+  open: function(){
+    this.opened = true;
+  },
+  toggle: function(e){
+    this.opened = !this.opened;
   }
+
 });
 </script>
 </dom-module>
@@ -242,10 +249,12 @@ Polymer({
     color: #333;
     white-space: nowrap;
     text-decoration: none;
+    @apply(--bootstrap-dropdown-item)
   }
   .item:hover{
     background-color:#eee;
     cursor:pointer;
+    @apply(--bootstrap-dropdown-item-hovered)
   }
   </style>
   <div class="item">
