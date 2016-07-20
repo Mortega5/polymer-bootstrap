@@ -9,36 +9,79 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>bs-gbtn Demo</title>
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="../bs-gbtn.html">
-  </head>
-  <body unresolved>
-    <bs-gbtn>
-      <div>title1</div>
-      <div>title2</div>
-      <div>title3</div>
-    </bs-gbtn>
-
-    <script>
-      var seedElement = document.querySelector('bs-gbtn');
-
-      document.querySelector('#saybtn').addEventListener('click', function() {
-        alert(seedElement.sayHello('Hallo!'));
-      });
-
-      document.querySelector('#laserbtn').addEventListener('click', function() {
-        seedElement.fireLasers();
-      });
-
-      document.addEventListener("bs-gbtn-lasers", function(e) {
-        console.log(e.detail.sound);
-      });
-
-    </script>
-
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>bs-gbtn Demo</title>
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../bs-gbtn.html">
+  <link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+</head>
+<body unresolved>
+<style is="custom-style">
+body{
+  margin: 10px 2%;
+}
+.content > div {
+  margin:20px;
+}
+</style>
+<template is="dom-bind" id="bind">
+  <div class="content horizontal layout">
+    <div class="custom-content">
+      <h2>Custom content</h2>
+      <h3>Large</h3>
+      <bs-gbtn size="large">
+        <button type="button">title1</button>
+        <button type="button">title2</button>
+        <button type="button">title3</button>
+        <button type="button">title4</button>
+      </bs-gbtn>
+      <h3>Medium</h3>
+      <bs-gbtn size="medium">
+        <button type="button">title1</button>
+        <button type="button">title2</button>
+        <button type="button">title3</button>
+      </bs-gbtn>
+      <h3>Small</h3>
+      <bs-gbtn size="small">
+        <button type="button">title1</button>
+        <button type="button">title2</button>
+        <button type="button">title3</button>
+      </bs-gbtn>
+      <h3>xsmall</h3>
+      <bs-gbtn size="xsmall">
+        <button type="button">title1</button>
+        <button type="button">title2</button>
+        <button type="button">title3</button>
+      </bs-gbtn>
+    </div>
+    <div class="simple-list">
+      <h2>Using simple list</h2>
+      <h3>Large</h3>
+      <bs-gbtn button_list="{{list1s}}" size="large">
+      </bs-gbtn>
+      <h3>Medium</h3>
+      <bs-gbtn button_list="{{list1s}}" size="medium">
+      </bs-gbtn>
+      <h3>Small</h3>
+      <bs-gbtn button_list="{{list1s}}" size="small">
+      </bs-gbtn>
+      <h3>xsmall</h3>
+      <bs-gbtn button_list="{{list1s}}" size="xsmall">
+      </bs-gbtn>
+    </div>
+    <div class="complex-list">
+      <h2>Using complex list</h2>
+    </div>
+    <div class="simple-list">
+      <h2>Using bs-button</h2>
+    </div>
+  </div>
+</template>
+<script>
+var bind = document.querySelector('#bind');
+bind.list1 = ['title 1', 'title 4', 'title 3', 'title 5'];
+</script>
+</body>
 </html>
