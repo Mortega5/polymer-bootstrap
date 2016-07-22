@@ -13,9 +13,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>bs-gbtn Demo</title>
-  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../bs-gbtn.html">
-  <link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+  <link rel="import" href="../../bs-dropdown/bs-dropdown.html">
+  <link rel="import" href="../../iron-flex-layout/classes/iron-flex-layout.html">
 </head>
 <body unresolved>
 <style is="custom-style">
@@ -100,17 +101,29 @@ body{
     </div>
     <div class="custom-style-list">
       <h2> Using custom style</h2>
-      <h3>Large</h3>
-      <bs-gbtn button_list="{{listComplex}}" size="large">
-      </bs-gbtn>
-      <h3>Medium</h3>
-      <bs-gbtn button_list="{{listComplex}}" size="medium">
-      </bs-gbtn>
-      <h3>Small</h3>
-      <bs-gbtn button_list="{{listComplex}}" size="small">
-      </bs-gbtn>
-      <h3>xsmall</h3>
-      <bs-gbtn button_list="{{listComplex}}" size="xsmall">
+      <h3>Using bs-dropdown</h3>
+      <bs-gbtn size="large">
+        <bs-dropdown btn_title="dropup" >
+          <div class="menu-content">
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+          </div>
+        </bs-dropdown>
+        <bs-dropdown btn_title="dropup">
+          <div class="menu-content">
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+          </div>
+        </bs-dropdown>
+        <bs-dropdown btn_title="dropup">
+          <div class="menu-content">
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+            <bs-dropdown-item>Example</bs-dropdown-item>
+          </div>
+        </bs-dropdown>
       </bs-gbtn>
     </div>
   </div>
