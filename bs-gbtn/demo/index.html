@@ -25,6 +25,18 @@ body{
 .content > div {
   margin:20px;
 }
+.custom-style-list > bs-gbtn {
+  --btn-gbtn-buttons: {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  };
+  --btn-gbtn-buttons-hovered: {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+  }
+}
 </style>
 <template is="dom-bind" id="bind">
   <div class="content horizontal layout">
@@ -73,6 +85,21 @@ body{
     </div>
     <div class="complex-list">
       <h2>Using complex list</h2>
+      <h3>Large</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="large">
+      </bs-gbtn>
+      <h3>Medium</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="medium">
+      </bs-gbtn>
+      <h3>Small</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="small">
+      </bs-gbtn>
+      <h3>xsmall</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="xsmall">
+      </bs-gbtn>
+    </div>
+    <div class="custom-style-list">
+      <h2> Using custom style</h2>
       <h3>Large</h3>
       <bs-gbtn button_list="{{listComplex}}" size="large">
       </bs-gbtn>
