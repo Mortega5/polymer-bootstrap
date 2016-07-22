@@ -4,10 +4,10 @@ Polymer elements based on bootstrap component. It use css provided by bootstrap.
 
 ## STATUS ##
 
-* [x] [Glyphicons](http://getbootstrap.com/components/#glyphicons)
-* [x] [Dropdowns](http://getbootstrap.com/components/#dropdowns)
+* [x] [Glyphicons](https://github.com/Mortega5/bs-glyphicon)
+* [x] [Dropdowns](https://github.com/Mortega5/bs-dropdown)
+* [x] [Button](https://github.com/Mortega5/bs-button)
 * [ ] [Button groups](http://getbootstrap.com/components/#btn-groups)
-* [ ] [Button dropdowns](http://getbootstrap.com/components/#btn-dropdowns)
 * [ ] [Input groups](http://getbootstrap.com/components/#input-groups)
 * [ ] [Navs](http://getbootstrap.com/components/#nav)
 * [ ] [Navbar](http://getbootstrap.com/components/#navbar)
