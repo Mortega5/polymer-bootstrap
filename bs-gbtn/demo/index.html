@@ -59,29 +59,42 @@ body{
     <div class="simple-list">
       <h2>Using simple list</h2>
       <h3>Large</h3>
-      <bs-gbtn button_list="{{list1s}}" size="large">
+      <bs-gbtn button_list="{{list1}}" size="large">
       </bs-gbtn>
       <h3>Medium</h3>
-      <bs-gbtn button_list="{{list1s}}" size="medium">
+      <bs-gbtn button_list="{{list1}}" size="medium">
       </bs-gbtn>
       <h3>Small</h3>
-      <bs-gbtn button_list="{{list1s}}" size="small">
+      <bs-gbtn button_list="{{list1}}" size="small">
       </bs-gbtn>
       <h3>xsmall</h3>
-      <bs-gbtn button_list="{{list1s}}" size="xsmall">
+      <bs-gbtn button_list="{{list1}}" size="xsmall">
       </bs-gbtn>
     </div>
     <div class="complex-list">
       <h2>Using complex list</h2>
-    </div>
-    <div class="simple-list">
-      <h2>Using bs-button</h2>
+      <h3>Large</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="large">
+      </bs-gbtn>
+      <h3>Medium</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="medium">
+      </bs-gbtn>
+      <h3>Small</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="small">
+      </bs-gbtn>
+      <h3>xsmall</h3>
+      <bs-gbtn button_list="{{listComplex}}" size="xsmall">
+      </bs-gbtn>
     </div>
   </div>
 </template>
 <script>
 var bind = document.querySelector('#bind');
 bind.list1 = ['title 1', 'title 4', 'title 3', 'title 5'];
+var callback = function(e, item, index){
+  console.log('Clicked ' + item.name);
+}
+bind.listComplex = [{name:'title 1',onclick:callback},{name:'title 2',onclick:callback},{name:'title 3',onclick:callback}];
 </script>
 </body>
 </html>

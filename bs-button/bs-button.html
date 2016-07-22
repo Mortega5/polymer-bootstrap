@@ -22,10 +22,10 @@ Example:
 ### Styling
 
 Custom property | Description | Default
-----------------------------------------|-------------|----------
-`--bs-btn` | Mixin applied to the button | `Based on the default bootstrap button`
-`--bs-btn-active` | Mixin applied to the button when its active, focused or hovered | `{}`
-`--bs-btn-disabled` | Mixin applied to the disabled button | `{}`
+----------------------|-------------|----------
+`--bs-button` | Mixin applied to the button | `Based on the default bootstrap button`
+`--bs-button-active` | Mixin applied to the button when its active, focused or hovered | `{}`
+`--bs-button-disabled` | Mixin applied to the disabled button | `{}`
 
 
 
@@ -56,7 +56,7 @@ Custom property | Description | Default
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    @apply(--bs-btn);
+    @apply(--bs-button);
   }
   .btn:focus,
   .btn:active:focus,
@@ -67,7 +67,7 @@ Custom property | Description | Default
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
-    @apply(--bs-btn-active);
+    @apply(--bs-button-active);
   }
   .btn:hover,
   .btn:focus,
@@ -90,7 +90,7 @@ Custom property | Description | Default
     -webkit-box-shadow: none;
     box-shadow: none;
     opacity: .65;
-    @apply(--bs-btn-disabled);
+    @apply(--bs-button-disabled);
   }
   .btn.default {
     color: #333;

@@ -10,7 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
-<link rel="import" href="bower_components/bs-button/bs-button.html">
 <!--
 An element providing a solution to no problem in particular.
 
@@ -74,25 +73,21 @@ Example:
         border-color: #adadad;
         @apply(--btn-gbtn-buttons-style-hovered);
       }
-      .btn-group.custom-content ::content:first-child,
-      .btn-group.custom-list ::content:nth-child(2){
+      .btn-group ::content:first-child{
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
       }
-      .btn-group.custom-content ::content:nth-last-child(3),
-      .btn-group.custom-list ::content:nth-last-child(2) {
+      .btn-group ::content:nth-last-child(2) {
         border-right: 1px solid #ccc;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
       }
     </style>
 
-    <div class$="btn-group horizontal layout {{content}}" role="group">
-      <template is="dom-if" if="{{button_list.length===0}}" class="content-list">
+    <div class="btn-group horizontal layout" role="group">
         <content></content>
-      </template>
       <template is="dom-repeat" items="{{button_list}}" class="array-list">
-        <bs-button link="{{item.link}}">{{_getName(item)}}</bs-button>
+        <div data-index$="{{index}}" on-click="_onclickButton">{{_getName(item)}}</div>
       </template>
     </div>
   </template>
@@ -110,20 +105,16 @@ Example:
         button_list: {
           type: Array,
           value: function(){return []},
-        },
-        content: {
-          type: String,
-          computed: '_isContent(button_list)'
         }
       },
       _getName: function(item){
         return item.name || item;
       },
-      _listEmpty: function(){
-        return !this.button_list || this.button_list.length == 0;
-      },
-      _isContent: function(list){
-        return !list || list.length === 0 ? 'custom-content': 'custom-list';
+      _onclickButton: function(e){
+        var index = e.target.getAttribute('data-index');
+        if (this.button_list[index] && this.button_list[index].onclick){
+          this.button_list[index].onclick(e, this.button_list[index], index);
+        }
       }
     });
   </script>

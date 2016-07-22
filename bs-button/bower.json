@@ -2,17 +2,20 @@
   "name": "bs-button",
   "version": "1.0.7",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Miguel Ortega Moreno miguel.ortega.moreno5@gmail.com"
   ],
-  "description": "An element providing a solution to no problem in particular.",
+  "description": "Polymer element that use boostrap style",
   "keywords": [
     "web-component",
+    "web-components",
+    "bootstrap",
+    "button",
     "polymer",
     "seed"
   ],
   "main": "bs-button.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "homepage": "https://github.com/mortega5/bs-button/",
   "ignore": [
     "/.*",
     "/test/"
